@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,36 +16,88 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
       </head>
       
-</head>
-<body>
-    <!-- nav -->
-    <nav class="navbar">
-        <div class="menu">
-          <ul class="menu-items">
-            <li><a href="#">Shop</a></li>
-            <li id="login-button">About </li>
-            <li><a href="index.html">Sustainability</a></li>
-          </ul>
-        </div>
-        <div class="logo">
-          <b>
-            <p id="logo">Bite</p>
-          </b>
-        </div>
-        <div class="user-actions">
-    <a href="./login.html"><i id="cart-button" class="fa-regular fa-user"> </i></a>
-       
-       <a > <i id="cart-b" class="fa-solid fa-cart-shopping"></i></a>  
-        </div>
-    
-      </nav>
-    
+
+<body onload="myFunction()">
+  
+<div id="popup"></div>
+<nav class="navbar">
+  <div class="menu">
+    <ul class="menu-items">
+      <li><a href="./index.html">Home</a></li>
+      <li id="login-button">About </li>
+      <li><a href="index.html">Sustainability</a></li>
+    </ul>
+  </div>
+  <div class="logo">
+    <b>
+      <p id="logo">Bite</p>
+    </b>
+  </div>
+  <div class="user-actions">
+    <div class="dropdown">
+      <button id="loginbutton" class=" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-user"></i> &nbsp;&nbsp;
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#"> My Profile</a></li>
+        <li><a class="dropdown-item" href="cart.html"> Order</a></li>
+        <li><a class="dropdown-item" href="cart.html"> cart</a></li>
+        <li id="logoutButton"><a class="dropdown-item" href="#">
+            Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="lb">login </button>
+
+    <a href="./cart.html"><button id="ub">cart &nbsp;<i class="fa-solid fa-cart-shopping"></i></button> </a>
+  </div>
+
+</nav>
+
+<!-- side frame for about -->
+<div id="side-frame">
+
+  <i id="hide-button" class="fa-solid fa-xmark" id="cart-button"></i>
+  <center>
+    <br><br><br><br><br><br>
+    <div id="list">
+
+
+      <h4>Ingredients</h4><br>
+      <h4>Sustainability</h4><br>
+      <h4>About Us</h4><br>
+      <h4>FAQ</h4><br>
+      <h4>Blog</h4><br>
+      <h4>Refer</h4>
+  </center>
+</div>
+</div>
+
+
+  
+    <br>
       <div id="prod">
-<p>All Products</p>
+<p id="prodname">All Products</p>
+<h5 id="t"></h5>
       </div>
+      
+<div id="main1">
 
+<div id="collection">
+  <h3>Collections</h3>
+  <br><br><br>
+  <button type="button" class="button" style="vertical-align:middle" id="all">All Products</button>
+  <button type="button"class="button" style="vertical-align:middle" id="oral">Oral care</button>
+  <button type="button"class="button" style="vertical-align:middle" id="personal">Personal care</button>
+  <button type="button"class="button" style="vertical-align:middle" id="bundles">Bundles</button>
+  <button type="button"class="button" style="vertical-align:middle" id="community">Community favorites</button>
+</div>
 
-      <br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="container">
+  
+</div>
+</div>
+<ul class="pagination" id="pagination"></ul>
 
 
 
@@ -87,7 +138,53 @@
       </div>
   
   </footer>
-  
+  <div id="loginpop">
+    <div id="popup"></div>
+    <div id="childpop">
+
+      <form id="login">
+        <h2>LOGIN <button id="close-button" class="close-button">&times;</button></h2>
+        <br><br>
+
+        <input type="email" id="email" placeholder="Enter your email">
+
+
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <center><input type="submit" value="Login" class="button"></center>
+
+        <p class="message">Don't have an account? <span id="signuppop">Sign up</span></p>
+        <center>
+          <p id="msg"></p>
+        </center>
+      </form>
+      <form id="singup">
+
+        <h2>Create Account <button id="close-button" class="close-button">&times;</button></h2>
+
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+
+
+        <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number">
+
+
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+
+        <center><input type="submit" value="Create Account" class="button" style="vertical-align:middle"></center>
+
+
+
+        <p class="message">Already have an account? <span id="logpop">Login</span></p>
+        <p id="msg"></p>
+      </form>
+
+
+    </div>
+  </div>
 </body>
 </html>
-<script src="index.js"></script>
+<script src="./index.js"></script>

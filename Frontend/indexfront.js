@@ -2,7 +2,6 @@
 var sideFrame = document.getElementById("side-frame");
 var hideButton = document.getElementById("hide-button");
 const popup = document.getElementById("popup");
-const popup1 = document.getElementById("popup1");
 var loginButton = document.getElementById("login-button");
 loginButton.addEventListener("click", function () {
 sideFrame.style.left = "0"; // Slide in the frame from the left
@@ -31,114 +30,114 @@ if (scrolled) {
 
 
 //login.html
-// let lb = document.getElementById("lb");
+let lb = document.getElementById("lb");
 
-// let sign = document.getElementById("s");
-// let sup = document.getElementById("sup");
-// let log = document.getElementById("log");
+let sign = document.getElementById("s");
+let sup = document.getElementById("sup");
+let log = document.getElementById("log");
 
 
-// //if i user hasn't accounte then signup page show
-// if (sup) {
-//   sup.addEventListener("click", () => {
+//if i user hasn't accounte then signup page show
+if (sup) {
+  sup.addEventListener("click", () => {
     
-//     l.style.display = "none";
-//     sign.style.display = "flex";
-//   });
-// }
+    l.style.display = "none";
+    sign.style.display = "flex";
+  });
+}
 
-// //if use are sigup successful then signup form display none ahd login from shpow
-// if (log) {
-//   log.addEventListener("click", () => {
-//     sign.style.display = "none";
-//     l.style.display = "flex";
-//   });
-// }
+//if use are sigup successful then signup form display none ahd login from shpow
+if (log) {
+  log.addEventListener("click", () => {
+    sign.style.display = "none";
+    l.style.display = "flex";
+  });
+}
 
-// //fetch login route for login
-// let form = document.getElementById("login");
-// let msg = document.getElementById("msg");
-// let msg1 = document.getElementById("msg1");
- 
+//fetch login route for login
+let form = document.getElementById("login");
+let msg = document.getElementById("msg");
+let msg1 = document.getElementById("msg1");
+let user = document.getElementById("loginbutton");
 
-// if (form) {
-//   form.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//      const payload = {
-//       email: form.email.value,
-//       password: form.password.value,
-//     };
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+     const payload = {
+      email: form.email.value,
+      password: form.password.value,
+    };
 
-//     fetch("http://localhost:9090/user/login", {
-//       method: "POST",
-//       headers: {
-//         "Content-type": "application/json",
-//       },
-//       body: JSON.stringify(payload),
-//     })
-//       .then((res) => res.json())
-//       .then((res) => {
-//         let m = res.msg;
-//       if (m == "login suceesfully") {
-//       let username=res.user[0].name
+    fetch("http://localhost:9090/user/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        let m = res.msg;
+      if (m == "login suceesfully") {
+      let username=res.user[0].name
   
-//       // Show the popup
-//   popup.style.display = "block";
-//   popup.innerText="You are successfully logged in &#10004;"
+      // Show the popup
+  popup.style.display = "block";
+  popup.innerText="You are successfully logged in &#10004;"
   
-//   // Hide the popup after 2 seconds
-//   let s =  setTimeout(function() {
-//     popup.style.display = "none";
-//   },3000);
-// //if user logged in successfully then user token and user name strore in localstorage
-//  localStorage.setItem("Tokenkey", res.token);
-// localStorage.setItem("username", username);
-// return (location.href = "./index.html");
-// }
-//         msg.innerText = "**" + m + "**";
-//       })
-//       .catch((err) => console.log(err));
-//   });
+  // Hide the popup after 2 seconds
+  let s =  setTimeout(function() {
+    popup.style.display = "none";
+  },3000);
+//if user logged in successfully then user token and user name strore in localstorage
+ localStorage.setItem("Tokenkey", res.token);
+localStorage.setItem("username", username);
+return (location.href = "./index.html");
+}
+        msg.innerText = "**" + m + "**";
+      })
+      .catch((err) => console.log(err));
+  });
 
-// }
-
-
+}
 
 
-// //fetch sign up route for sign up
-// const signup = document.getElementById("singup");
-// if (signup) {
-  // signup.addEventListener("submit", (event) => {
-  //   event.preventDefault();
-  //   const payload = {
-  //     name: signup.name.value,
-  //     mobile: signup.mobile.value,
-  //     email: signup.email.value,
-  //     password: signup.password.value,
-  //   };
-  //   console.log(payload);
-  //   fetch("http://localhost:9090/user/signup", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(payload),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       let m = res.msg;
-  //       popup.style.display = "block";
-  //     popup.innerText=m
-  //       // Hide the popup after 2 seconds
-  //       let s =  setTimeout(function() {
-  //         popup.style.display = "none";
-  //       },3000);
-  //       sign.style.display = "none";
-  //       l.style.display = "flex";
-  //     })
-  //     .catch((err) => console.log(err));
-  // });
-// }
+
+
+//fetch sign up route for sign up
+const signup = document.getElementById("singup");
+if (signup) {
+  signup.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const payload = {
+      name: signup.name.value,
+      mobile: signup.mobile.value,
+      email: signup.email.value,
+      password: signup.password.value,
+    };
+    console.log(payload);
+    fetch("http://localhost:9090/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        let m = res.msg;
+        popup.style.display = "block";
+      popup.innerText=m
+        // Hide the popup after 2 seconds
+        let s =  setTimeout(function() {
+          popup.style.display = "none";
+        },3000);
+        sign.style.display = "none";
+        l.style.display = "flex";
+      })
+      .catch((err) => console.log(err));
+  });
+}
 
 //shop
 
@@ -227,8 +226,10 @@ function fetching(category) {
 //show
 
 
+const productsPerPage = 6;
+const totalPages = Math.ceil(products.length / productsPerPage);
 
-function show(arr) {
+function show(arr,page) {
   container.innerHTML = "";
   arr.forEach((element) => {
     let prov = document.createElement("div");
@@ -293,7 +294,6 @@ popup.innerText=data.msg
 }
 
 //cart.html
-let tbody = document.getElementById("tbody");
 let cartcontainer = document.getElementById("con");
 let ch = document.getElementById("ch1")
 let tt = document.getElementById("tt");
@@ -308,18 +308,12 @@ function cart() {
     .then((res) => {
       console.log(res)
       let data = res;
-   //  popup.style.display = "block";
+     // popup.style.display = "block";
 // popup.innerText=res.msg
-// setTimeout(function() {
-//   popup.style.display = "none";
-// },1000);
-
-if(res.msg=="“It seems you're not logged in. Please login to continue using charts” while opening a Chart on bite?"){
-  cartcontainer.innerHTML="please login first to continue shopping !"
-
-}
-// Hide the popup after 2 seconds
- 
+//   // Hide the popup after 2 seconds
+//   setTimeout(function() {
+//     popup.style.display = "none";
+//   },1000);
 
 
       if (res.msg == "No cart found") {
@@ -346,7 +340,7 @@ if(res.msg=="“It seems you're not logged in. Please login to continue using ch
     });
 }
 
-
+let tbody = document.getElementById("tbody");
 
 function cartshow(data) {
   tbody.innerHTML = "";
@@ -451,133 +445,18 @@ popup.innerHTML = response.msg
   });
 }
 
-// login
-
-const loginpop = document.getElementById("loginpop")
-const lb = document.getElementById("lb")
-const closeButton = document.getElementById("close-button");
-const logpop = document.getElementById("logpop");
-const signuppop = document.getElementById("signuppop")
-const login = document.getElementById("login")
-const  singup = document.getElementById("singup")
-let usere = document.getElementById("loginbutton");
-//Don't have an account
-if(signuppop){
-  signuppop.addEventListener("click", () =>{
-    login.style.display="none";
-    singup.style.display="flex";
-  })
-}
-
-
-//have account then login
-if(logpop){
-  logpop.addEventListener("click", () =>{
-    singup.style.display="none";
-    login.style.display="flex";
-    })
-}
-
-//when i clicl login button is then login pop come
-  lb.addEventListener("click", ()=>{
-  loginpop.style.display = "block";
- })
-// Event listener for the close button
-
-
-//login
-if(login){
-login.addEventListener("submit", (e) => {
-    e.preventDefault();
-     const payload = {
-      email: login.email.value,
-      password: login.password.value,
-    };
-  fetch("http://localhost:9090/user/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(payload),
-  })
-      .then((res) => res.json())
-      .then(async(res) =>{
-        if (res.msg == "login suceesfully") {
-      let username=res.user[0].name
-  
-      // Show the popup
-  popup.style.display = "block";
-  popup.innerText="You are successfully logged ;"
-  
-  // Hide the popup after 2 seconds
-  let s = await setTimeout(function() {
-    popup.style.display = "none";
-  },2000);
-//if user logged in successfully then user token and user name strore in localstorage
- localStorage.setItem("Tokenkey", res.token);
-localStorage.setItem("username", username);
-return (location.href = "./index.html");
-}else{
-   popup.style.display = "block";
-   popup.innerText=res.msg
-  // Hide the popup after 2 seconds
-  let s =  setTimeout(function() {
-    popup.style.display = "none";
-  },3000); 
-}
- })
-  
-      .catch((err) => console.log(err));
-  });
-}
-
-
 let un = localStorage.getItem("username")
-if(un) {
+if(un.length > 0) {
   showusername(un)
 }
 function showusername(username){
-   usere.style.display="block"
+   user.style.display="block"
   lb.style.display ="none"  
-  usere.append(username)
-}
-
-//sign up
-if(singup){
-  singup.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const payload = {
-      name: singup.name.value,
-      mobile: singup.mobile.value,
-      email: singup.email.value,
-      password: singup.password.value,
-    };
-   // console.log(payload);
-    fetch("http://localhost:9090/user/signup", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        let m = res.msg;
-        popup.style.display = "block";
-      popup.innerText=m
-     // alert(m)
-        // Hide the popup after 2 seconds
-        let s =  setTimeout(function() {
-          popup.style.display = "none";
-        },3000);
-        singup.style.display = "none";
-        login.style.display = "flex";
-      })
-      .catch((err) => console.log(err));
-  });
+  user.append(username)
 }
 
 //logut
+
 var logoutButton = document.getElementById("logoutButton");
 logoutButton.addEventListener("click", function() {
   
@@ -585,25 +464,10 @@ logoutButton.addEventListener("click", function() {
 location.reload();
 
           // Show the popup
-          popup1.style.display = "block";
-          popup1.innerHTML = "Logout Successfully"
+          popup.style.display = "block";
+          popup.innerHTML = "Logout Successfully"
             // Hide the popup after 2 seconds
-            setTimeout(()=> {
-            popup1.style.display = "none";
-            },3000);
-            
-            location.reload();
-          });
-
-
-
-
-
-          if(closeButton){
-            closeButton.addEventListener("click", function(e) {
-              // alert("close")
-              e.preventDefault();
-              loginpop.style.display = "none";
-            });
-            
-          }
+            setTimeout(function() {
+              popup.style.display = "none";
+            },1000);
+});

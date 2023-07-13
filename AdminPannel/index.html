@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    background-image: url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+background-size: cover;
+}
+    #login{
+    width: 20%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 200px;
+    box-shadow: rgba(233, 121, 34, 0.4) 3px 3px 3px 4px, rgba(236, 26, 96, 0.65) 4px 4px 6px 6px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    padding: 100px;
+    }
+    input[type="email"],input[type="password"]{
+        padding: 13px;
+    }
+    #button{
+        width: 70px;
+        border: none;
+        padding: 8px;
+        align-items: right;
+        background-color: green;
+    }
+    h1{
+        color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #fefefe;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 100px;
+    color: #f70000;
+    border: none;
+    /* border-radius: 5px; */
+    font-weight: bold;
+    font-size: 20px;
+  }
+    </style>
+
+</head>
+<body>
+   
+    <div id="popup"></div>
+<form id="login">
+    <h1>Admin Login</h1> 
+    <input type="email" placeholder="Enter Your Email" id="email">
+    <input type="password" placeholder="Password" id="password">
+    <input type="submit" value="submit" id="button">
+</form>
+
+</body>
+</html>
+<script>
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let login = document.getElementById("login");
+login.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    console.log(email.value,password.value)
+    if(email.value=="admin@gmail.com" && password.value=="admin"){
+        window.location.href = "dashboard.html";
+    }else{
+        // Show the popup
+       popup.style.display = "block";
+           popup.innerHTML = "wrong credentials !"
+           // Hide the popup after 2 seconds
+           setTimeout(function () {
+             popup.style.display = "none";
+           }, 3000);
+    }
+})
+
+</script>

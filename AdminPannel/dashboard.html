@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div id="popup"></div>
+
+  <div class="sidebar">
+    <ul>
+      <li id="dashboard"><i class="fa-solid fa-house"></i>&nbsp;&nbsp; Dashboard</li>
+      <li id="users" onclick="usersf()"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;&nbsp;Users</li>
+
+      <li id="products" onclick="fetchProducts()"><i class="fa-solid fa-folder"></i>&nbsp;&nbsp;&nbsp;Products</li>
+      <li id="add-product"><i class="fa-solid fa-folder-plus"></i>&nbsp;&nbsp;&nbsp;Add Products</li>
+      <li id="logout" onclick="Logout()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="dashboard-content">
+      <h2>Dashboard</h2>
+      <div id="Dash">
+
+        <div>
+          <h3>Total Sales Amount</h3>
+          <h3 id="totalsale">0.00</h3>
+        </div>
+
+        <div>
+          <h3>Total Products</h3>
+          <h3 id="totalprod">0</h3>
+        </div>
+        <div>
+          <h3>Total Users</h3>
+          <h3 id="totaluser">0</h3>
+        </div>
+      </div>
+      <br><br><br>
+      <hr>
+    </div>
+    <!-- users -->
+    <div class="users-content">
+
+      <h2>Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- User data will be dynamically added here -->
+        </tbody>
+      </table>
+    
+      <div id="paginationuser"></div>
+    
+      <div id="popup"></div>
+    </div>
+
+<!-- for produts sections -->
+    <div class="products-content">
+      <h2>Products</h2>
+    
+    <div id="update-form-popup" class="update-form-popup">
+      <div class="update-form-content">
+        <h2>Update Product <button id="close-button" class="close-button">&times;</button></h2>
+        
+        <form id="update-form">
+          <input type="hidden" id="prodId" name="custId" value="3487">
+          <label for="update-title">Img URL</label>
+          <input type="text" id="update-img" name="price"> 
+          <label for="update-title">Title</label>
+          <input type="text" id="update-title" name="title">
+          <label for="update-description">Description</label>
+          <textarea id="update-description" name="description"></textarea>
+          <label for="update-price">Price</label>
+          <input type="text" id="update-price" name="price">
+          <label for="update-quantity">Quantity</label>
+          <input type="number" id="update-quantity" name="quantity">
+          <label for="update-category">Category</label>
+          <input type="text" id="update-category" name="category">
+          <button type="submit" id="btn1">Update</button>
+        </form>
+        
+      </div>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productTableBody">
+        <!-- Product data will be dynamically added here -->
+      </tbody>
+    </table>
+  
+    <div id="pagination"></div>
+  
+   
+      </div>
+
+   
+
+    <!-- add-product-content -->
+    <div class="add-product-content">
+      <div id="adp">
+        <form id="addproduct">
+          <H1 id="heading">ADD PRODUCT</H1>
+          <input type="text" id="title" placeholder="Title">
+          <input type="text" id="avtar" placeholder="Image url">
+          <textarea name="" id="desc"  placeholder="Description"></textarea>
+          
+          <input type="text" id="price" placeholder="Price">
+          <input type="text" id="Qyt" placeholder="Qyt">
+          <input type="text" id="category" placeholder="category">
+          <input type="submit" value="ADD" id="btn1">
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>

@@ -3,25 +3,28 @@ body, ul {
     margin: 0;
     padding: 0;
     
-    font-family: cursive;
-    
-  }
+}
   
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
+    background-color:hwb(120 95% 4%);
+    transition: background-color 0.30s ease-in-out;
+
+    border: none;
     position: fixed;
+    margin-bottom: px;
+    margin-top: px;
   }
   
   .navbar.scrolled {
     /* width: 100%; */
+    margin-top: 0px;
     position: fixed;
     background-color:#fffcfc; /* Set your desired background color here */
-    border-bottom: 1px solid rgb(224, 181, 181);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
   
   
@@ -51,7 +54,9 @@ color: #333;
     color: #333;
     text-decoration: none;
   }
-  
+  .dec{
+    font-family: cursive;
+  }
   
   
   /* Style the user actions */
@@ -63,14 +68,31 @@ color: #333;
   
   #banner{
     background-image: url(https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_March2023_Desktop_extended_1512x.jpg?v=1681574219);
-height:700px; 
+height:600px; 
 padding-left: 50px;
 margin: auto;
-padding-top: 350px;
+padding-top: 250px;
 font-family: cursive;
+}
+#banner>h1{
+  color: #e26641;
+  font-size: 70px;
+  padding-bottom: 10px;
+  font-weight: bold;
 
 }
+#banner>p{
+  color: #e08619df;
+  font-size: 20px;
+  padding-bottom: 10px;
+  font-weight: bold;
 
+}
+.my-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: cursive;
+}
 
 .button {
     display: inline-block;
@@ -87,7 +109,11 @@ font-family: cursive;
     margin: 5px;
     border-radius: 50px;
   }
-  
+  #msg{
+    color: #e15328;
+    
+    font-size: 20px;
+  }
   .button span {
     cursor: pointer;
     display: inline-block;
@@ -213,7 +239,7 @@ padding-top: 250px;
 #four>div:nth-child(2){
     width: 100%;
     height: 700px;
-    background-image: url(https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_March_11_1_720x.png?v=1683137891);
+    background-image: url(https://bitetoothpastebits.com/cdn/shop/products/duo_desktop_carousel_1_720x.jpg?v=1687830331);
     text-align: center;
     padding-top: 400px;
     background-position: center; /* Center the image */
@@ -290,7 +316,7 @@ color: black;
 
 
 
-#l>h4:hover {
+#list>h4:hover {
   /* font-size: 20px; */
   color: #f4511e;
   text-decoration: underline;
@@ -300,9 +326,302 @@ color: black;
 .footer-left{
   line-height: 20px;
 }
-/* #side-frame:hover {
+.btns{
+  border: 1px solid rgb(173, 155, 155);
+  width: 80px;
+  margin: 10px;
+  text-align: center;
+  color: #45a049;
+}
+/* login.html */
+#l{ 
+  height: 550px;
+ display: flex;
+ 
+ width: 90%;
+ margin: auto;
+ margin-top: 100px;
+ margin-bottom: 100px;
+}
+.ret{
   
-} */
+  width: 140px;
+  margin: auto;
+}
+#bg{
+background-image: url(https://images.unsplash.com/photo-1540760938999-077b8231d890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80);
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+#prod{
+  background-color: hsl(188, 24%, 88%);
+  height: 190px;
+  text-align: center;
+  padding: 50px;
+  font-weight: bold;
+  font-size: 50px;
+  font-family: cursive;
+
+}
+
+/* cart.html */
+
+h2 {
+  margin-top: 0;
+}
+.cart-container {
+  
+  width: 90%;
+  padding: 30px;
+  margin: auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.cart-products {
+flex: 1;
+}
+
+.checkout-section {
+  
+  /* border-left: 1px solid black; */
+padding-top: 50px;
+text-align: center;
+  flex: 1;
+  
+}
+table {
+  
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  text-align: left;
+  
+}
+td img {
+  max-width: 80px;
+  max-height: 80px;
+  vertical-align: middle;
+}
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+.quantity-button,.remove-button {
+  padding: 4px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+tbody>tr{
+/* font-family: cursive;
+  
+  border-bottom: 1px solid rgb(214, 163, 163); */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+
+
+#main1{
+  display: flex;
+}
+
+#collection{
+
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+
+
+}
+#container{
+  padding: 30px;
+  display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 20px;
+
+}
+#container>div{
+ display: grid;
+ gap: 5px;
+}
+#container>div>img{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+
+}
+.d{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+
+#popup,#popup1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #030215;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 100px;
+  color: #fff;
+  
+  border-radius: 5px;
+  
+}
+
+#t{
+  font-family: 'Courier New', Courier, monospace;
+}
+#lb,#ub{
+  /* background-color: white; */
+  padding: 5px;
+  border: none;
+  width: 100px;
+}
+#lb:hover,#ub:hover,#loginbutton:hover{
+  background-color: #ccc;
+  color: #e15328;
+}
+#loginbutton{
+width: auto;
+ display: none; 
+
+border: none;
+padding: 5px;
+
+
+}
+li:hover{
+  color: #e15328;
+}
+
+/* login */
+
+#loginpop{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+
+  overflow: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+#childpop {
+  width: 40%;
+  margin: auto;
+  margin-top: 150px;
+  padding: 70px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid rgb(255, 255, 255);
+  height: 500px;
+}
+
+#login {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: aliceblue;
+  
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 13px;
+}
+
+
+#singup {
+  
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: aliceblue;
+  display: none;   
+}
+   
+   #close-button {
+  /* color: #aaa; */
+  float: right;
+  border-radius: 50px;
+  /* padding: 8px; */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: rgb(253, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+#logpop,#signuppop{
+color: blue;
+text-decoration: underline;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -313,7 +632,9 @@ color: black;
 
     #banner{
         background-image: url(https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_March2023_Mobile_540x.jpg?v=1681558573);
-    height: 600px;  
+    height: 500px; 
+    padding-top: 200px; 
+    font-weight: bold;
     }
 
     .menu-items {
@@ -378,96 +699,94 @@ color: black;
       margin-left: 5px;
     }
 
-    #container1,#container2 {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: px;
-      background-color:rgb(71, 71, 136);
-      border-radius: 5px;
-      box-shadow:none;
-      padding: 50px;
-      margin: auto;
-      margin-bottom: 50px;
-      margin-top: 50px;
-      font-family: cursive;
+    
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap:20px
     }
+
     .footer-left>h1{
-      line-height: 5px;
-      font-size: 15px;
-    }
-    .footer-left>p{
-      line-height: 5px;
-      font-size:0px ;
+      line-height: 13px;
+      font-size: 20px;
     }
     
+    #five{
+      width:80%;
+      margin: auto;
+      font-weight: bold;
+      font-family: cursive;
+      font-size: 20px;
+      color: #f4511e;
+      line-height: 30px;
+      margin-bottom: 0px;
+  }
+
+  #four{
+    display: flex;
+ flex-direction: column;
+    width: 90%;
+    margin:auto;
+    gap: 30px;
+    font-family: cursive;
+    margin-bottom: 20px;
+}
+#four>div:nth-child(1){
+  width: 100%;
+  height: 500px;
+  background-image: url(https://cdn.shopify.com/s/files/1/1864/2187/files/2021_7_720x.jpg?v=1681163796);
+  text-align: center;
+  padding-top: 250px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  font-size: 30px;
+}
+#four>div:nth-child(2){
+  width: 100%;
+  height: 500px;
+  background-image: url(https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_March_11_1_720x.png?v=1683137891);
+  text-align: center;
+  padding-top: 250px;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  font-size: 30px;
+  
+}
+
+.cart-container {
+  box-shadow:none;
+ flex-direction:column ;
+ gap:100px; 
+ margin-top: 70px;
+}
   }
   
 
-  #prod{
-    background-color: #c3d5d7;
-    height: 170px;
-    text-align: center;
-    padding: 50px;
-    font-weight: bold;
-    font-size: 50px;
-    font-family: cursive;
-    
-  }
 
 
 
 
-/* login */
-
-#container1,#container2 {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 50px;
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-family: cursive;
-}
-#container2{
-  display: none;
-}
-h2 {
-  text-align: center;
-  color: #333333;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid orangered;
-}
-#up{
-  color: blue;
-}
-#in{
-color: blue;   
-}
 
 
-.message {
-  margin-top: 20px;
-  text-align: center;
-  color: #999999;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* https://www.tutorialspoint.com/css/css_positioning.htm#:~:text=You%20can%20use%20two%20values,a%20negative%20value%20for%20top. */
